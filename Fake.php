@@ -2,38 +2,37 @@
 
 class Fake
 {
-    function PutTicket(): string
+    function PutContact()
     {
         $faker = Faker\Factory::create();
 //        for ($i = 0; $i < $counter; $i++) {
-            $priorityList = ['low', 'normal', 'high', 'urgent'];
-            shuffle($priorityList);
-            $randObjPriority = array_rand($priorityList);
-            $priority = $priorityList[$randObjPriority];
+//        $priorityList = ['low', 'normal', 'high', 'urgent'];
+//        shuffle($priorityList);
+//        $randObjPriority = array_rand($priorityList);
+//        $priority = $priorityList[$randObjPriority];
+//
+//        $statusList = ['open', 'pending', 'solved'];
+//        shuffle($statusList);
+//        $randObjStatus = array_rand($statusList);
+//        $status = $statusList[$randObjStatus];
 
-        $statusList = ['open', 'pending', 'solved'];
-        shuffle($statusList);
-        $randObjStatus = array_rand($statusList);
-        $status = $statusList[$randObjStatus];
+        $name = $faker->name;
+        $email = $faker->email;
+        $phone = $faker->phoneNumber;
+//        $subject = $faker->realText(30);
+        $description = $faker->realText();
 
-            $subject = $faker->realText(30);
-            $body = $faker->realText(300);
-            $postArrJson = '{
-                  "ticket": {
-                     "comment": {
-                     "body": "'.$body.'"
-                  },
-            "priority": "'.$priority.'",
-            "subject": "'.$subject.'",
-            "type": "problem",
-            "status": "'.$status.'",
-            "requester_id": 9862423018909,
-            "submitter_id": 9862423018909,
-            "assignee_id": 9862423018909,
-            "organization_id": 9862447743261,
-            "group_id": 9862463583005
-  } }';
-            return $postArrJson;
-        }
+        $postArrJson =
+            '{
+    "name": "'.$name.'",
+    "email": "'.$email.'",
+    "phone": "'.$phone.'",
+    "company_id": 103000954157,
+    "description": "'.$description.'"
+}';
+        return $postArrJson;
+    }
 //    }
+
+
 }
