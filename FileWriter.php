@@ -55,8 +55,8 @@ class FileWriter
                 $tickets[$i]['company_id'],//Company ID
                 $specificCompanyData['name'], //Company Name
                 $specificCompanyData['description'] //Comments
-
             );
+            sleep(3);
             fputcsv($file, $finalArr);
         }
 
